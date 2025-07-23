@@ -62,18 +62,16 @@
   <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-database-compat.js"></script>
 
   <script>
-    // TODO: Replace with your Firebase project config
     const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "SENDER_ID",
-      appId: "APP_ID"
+      apiKey: "AIzaSyD6e-fakekey-for-testing12345",
+      authDomain: "my-realtime-chat-test.firebaseapp.com",
+      databaseURL: "https://my-realtime-chat-test-default-rtdb.firebaseio.com",
+      projectId: "my-realtime-chat-test",
+      storageBucket: "my-realtime-chat-test.appspot.com",
+      messagingSenderId: "123456789012",
+      appId: "1:123456789012:web:abc1234567890def"
     };
 
-    // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const db = firebase.database();
 
@@ -91,7 +89,6 @@
       }
     }
 
-    // Listen for new messages
     db.ref('messages').on('child_added', (snapshot) => {
       const msg = snapshot.val();
       const p = document.createElement('p');
